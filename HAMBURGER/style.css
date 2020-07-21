@@ -1,0 +1,68 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #000000;
+}
+
+.container
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+
+input[type="checkbox"]
+{
+    display: none;
+}
+.nav-bar
+{
+    cursor: pointer;
+}
+.ham-burger
+{
+    width: 100px;
+    position: relative;
+}
+.ham-burger ,
+.ham-burger::before ,
+.ham-burger::after 
+{
+    height: 8px;
+    background-color: #eeeeee;
+    display: inline-block;
+    border-radius: 5px;
+    border-style: none;
+}
+.ham-burger::before ,
+.ham-burger::after 
+{
+    content: '';
+    width: 50px;
+    position: absolute;
+}
+.ham-burger::before
+{
+    transform: translateY(-50px);
+    left: 0;
+    transform-origin: right;
+}
+.ham-burger::after
+{
+    transform: translateY(50px);
+    right: 0;
+    transform-origin: left;
+}
+input[type="checkbox"]:checked + label .ham-burger::before ,
+input[type="checkbox"]:checked + label .ham-burger::after
+{
+    transform: translate(0) 
+    rotate(450deg);
+}
+input[type="checkbox"]:checked + label .ham-burger
+{
+    transform: rotate(45deg);
+}
